@@ -36,16 +36,16 @@ Run the training script with default settings:
 python train.py --n_epochs 200 --batch_size 64 --lr 0.0002 --latent_dim 100 --img_size 28 --channels 1 --sample_interval 400
 ```
 
-You can adjust the command-line arguments:
+### You can adjust the command-line arguments:
 
---n_epochs: Number of epochs for training.
---batch_size: Batch size.
---lr: Learning rate for the Adam optimizer.
---b1 and --b2: Adam optimizer momentum decay parameters.
---latent_dim: Dimensionality of the noise vector.
---img_size: Dimensions of each generated image.
---channels: Number of image channels (1 for grayscale, as in MNIST).
---sample_interval: Interval (in batches) at which generated image samples are saved.
+* --n_epochs: Number of epochs for training.
+* --batch_size: Batch size.
+* --lr: Learning rate for the Adam optimizer.
+* --b1 and --b2: Adam optimizer momentum decay parameters.
+* --latent_dim: Dimensionality of the noise vector.
+* --img_size: Dimensions of each generated image.
+* --channels: Number of image channels (1 for grayscale, as in MNIST).
+* --sample_interval: Interval (in batches) at which generated image samples are saved.
 
 ## Implementation Details
 ### Generator
@@ -63,11 +63,14 @@ The generator is composed of a series of fully connected (linear) layers. Each b
 Architecture:
 The discriminator flattens the input image and processes it through a series of linear layers with LeakyReLU activations. It outputs a single probability value via a Sigmoid function indicating whether the input is a real image or a fake one.
 
-Loss Function
+### Loss Function
 Both networks are optimized using Binary Cross-Entropy Loss (BCE Loss):
 
-### Generator Loss: Measures how effectively the generator can fool the discriminator.
-### Discriminator Loss: Measures the discriminator's ability to distinguish between real and generated images.
+### Generator Loss: 
+Measures how effectively the generator can fool the discriminator.
+
+### Discriminator Loss: 
+Measures the discriminator's ability to distinguish between real and generated images.
 
 
 ## Training Process
